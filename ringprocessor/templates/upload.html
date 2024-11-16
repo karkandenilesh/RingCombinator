@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ring Combination</title>
+  </head>
+  <body>
+    <h1>Upload CSV File</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Upload</button>
+    </form>
+
+    {% if download_link %}
+    <h2>Your file is ready for download:</h2>
+    <a href="{{ download_link }}" download>Download CSV File</a>
+    {% endif %}
+  </body>
+</html>
